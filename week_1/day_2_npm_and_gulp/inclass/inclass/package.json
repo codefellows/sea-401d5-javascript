@@ -1,0 +1,24 @@
+{
+  "name": "greet",
+  "version": "0.1.0",
+  "description": "",
+  "main": "greet.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node greet.js"
+  },
+  "author": "Me",
+  "license": "ISC",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "gulp": "^3.9.1",
+    "gulp-eslint": "^2.0.0",
+    "mocha": "^2.4.5"
+  },
+  "dependencies": {
+    "lodash": "^4.12.0"
+  }
+}
