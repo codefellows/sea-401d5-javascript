@@ -2,6 +2,7 @@
 const http = require('http');
 const fs = require('fs');
 const stream = require('stream');
+const jsonParse = require('./promise');
 
 http.createServer((req, res) => {
   //TODO res error
@@ -36,26 +37,40 @@ http.createServer((req, res) => {
       //validation
       let str = bufArr.toString(); //array of buffers to string
       let jsonObj = {};
-      try {
-        jsonObj = JSON.parse(str);
-      } catch (e) {
-        //tell client we have error
+      // try {
+      //   jsonObj = JSON.parse(str);
+      // } catch (e) {
+      //   //tell client we have error
+      //   res.statusCode = 400;
+      //   res.write("Use json");
+      //   //log error
+      //   console.log("error validating");
+      // }
+
+      jsonParse(str).then((data) =>{  //data is a json obj
+        let validString = JSON.stringify(data);
+        //TODO error handling file write
+        let file = fs.createWriteStream(__dirname + '/data/data.json');
+        let bufferStream = new stream.PassThrough();
+        let inBuf = new Buffer(validString);
+        bufferStream.end(inBuf);
+        bufferStream.pipe(file);
+
+        res.statusCode = 200;
+        res.end("data written to file\n");
+
+      }, (err) =>{
         res.statusCode = 400;
-        res.write("Use json");
+        res.end("err");
+
         //log error
-        console.log("error validating");
-      }
+        console.log(err);
+      });
 
 
-      //TODO error handling file write
-      let file = fs.createWriteStream(__dirname + '/data/data.json');
-      let bufferStream = new stream.PassThrough();
-      let inBuf = new Buffer(bufStr);
-      bufferStream.end(inBuf);
-      bufferStream.pipe(file);
 
-      res.statusCode = 200;
-      res.end("data written to file\n");
+
+
 
 
     });
