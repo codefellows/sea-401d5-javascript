@@ -15,7 +15,7 @@ module.exports = (req, res, next) => {
       console.log(e);
       e.message = 'invalid jason';
       e.statusCode = 422;
-      next();
+      next(e);
     }
   });
 };
