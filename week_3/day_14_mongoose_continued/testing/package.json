@@ -18,5 +18,9 @@
     "express": "^4.13.4",
     "mongoose": "^4.4.19",
     "morgan": "^1.7.0"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "chai-http": "^2.0.1"
   }
 }
