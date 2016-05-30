@@ -103,4 +103,4 @@ Lowercase filename and upper camel var names; for exmaple
 `const MyModule = require('my-module');`
 
 
-This project is licensed under the terms of the [MIT license](LICENSE.txt).
+This project is licensed under the terms of the [MIT license](https://opensource.org/licenses/MIT).
