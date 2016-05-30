@@ -14,7 +14,7 @@ gulp.task('lint', () => {
 });
 
 gulp.task('test', () => {
-  gulp.src('test/*.js')
+  gulp.src('test/*test.js')
   .pipe(mocha());
 });
 
