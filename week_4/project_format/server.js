@@ -6,7 +6,8 @@ const mongoose = require('mongoose');
 const morgan = require('morgan');
 const errorHandler = require('./lib/error_handling');
 
-const dbPort = process.env.MONGOLAB_URI || 'mongodb://localhost/dev_db';
+const dbPort = process.env.MONGODB_URI || 'mongodb://localhost/dev_db';
+console.log('dbPort', dbPort);
 
 mongoose.connect(dbPort);
 
@@ -24,6 +25,6 @@ app.use((req, res) => {
 });
 
 
-app.listen(3000, () => {
+app.listen(process.env.PORT || 3000, () => {
   console.log('up on 3000');
 });
