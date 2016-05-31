@@ -6,8 +6,16 @@
 + good practice to copy `.eslintrc` and `.eslintignore`  into ~/ - this allows eslint to find them if they're not in the project
 
 #### Testing Lint  
-```npm install -g eslint```  
-To test in your root as TA's will:  ```eslint *```  
+TA's and graders will be testing lint in your homework from now on. If you don't pass lint, you'll receive points and be asked to fix lint errors and resubmit.  
+
+You can run the lint test yourself by first installing npm's eslint package.
+
+```npm install -g eslint```   
+
+Then call ```eslint *``` in the root of your project. If there are lint errors correct and retest.  
+
+ You can find packages for Sublime and Atom to help with fixing lint errors while coding.  
+
 * Sublime  
   sublime-linter, csslint, eslint
 
@@ -23,7 +31,7 @@ For example in gulpfile
   gulp.watch('./**/*.js', ['lint', 'test']);
 ```
 
-  We never actually make a call with watch so we could just require.  You may not be using 'gulp-watch' if you're using the watch built into gulp, so you can just remove the require.
+  We never actually make a call with 'watch' as we are using 'gulp.watch'.  You may not be using 'gulp-watch' if you're using the watch built into gulp, so you can just remove the require.  It will cause a lint error if you are declare a reference variable and don't use it.
 
 
 ### Setup .gitignore
