@@ -101,3 +101,12 @@ Lowercase filename and upper camel var names; for exmaple
 
 
 This project is licensed under the terms of the [MIT license](https://opensource.org/licenses/MIT).
+
+#### Mongo running in background
+Sometimes when you close computer or close window, mongod can be running in background here's how to check
+
+Rebeccas-MacBook-Air:node-project becky$ `ps aux|grep mongo`  
+becky          <b>14191</b>   1.3  0.1  2570380   4916   ??  S    Sun07PM  12:01.62 mongod  
+becky          20343   0.0  0.0  2423376    212 s000  R+    9:58AM   0:00.00 grep mongo  
+Rebeccas-MacBook-Air:node-project becky$ `kill -9 14191`
+Rebeccas-MacBook-Air:node-project becky$ ps aux|grep mongo  
