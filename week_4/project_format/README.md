@@ -23,11 +23,8 @@ For example in gulpfile
   gulp.watch('./**/*.js', ['lint', 'test']);
 ```
 
-  We never actually make a call with watch so we could just require
+  We never actually make a call with watch so we could just require.  You may not be using 'gulp-watch' if you're using the watch built into gulp, so you can just remove the require.
 
-```javascript
-  require('gulp-watch');
-```  
 
 ### Setup .gitignore
 [See gitignore.io to help setup](https://www.google.com)  
