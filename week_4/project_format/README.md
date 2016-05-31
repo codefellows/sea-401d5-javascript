@@ -114,5 +114,5 @@ The `ps aux` command finds all processes and the pipe to `grep mongo` shows just
 `becky          20343   0.0  0.0  2423376    212 s000  R+    9:58AM   0:00.00 grep mongo`  
 
 ###### To Kill it
-To actually terminate the process, find the id (the number after the  owner, in this case 1491) of the process and call  
+To actually terminate the process, find the id (the number after the  owner, in this case 14191) of the process and call  
 `kill -9 14191`
