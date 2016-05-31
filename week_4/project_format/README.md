@@ -109,7 +109,7 @@ Sometimes when you close computer or close window, mongod can be running in back
 ###### To Find the Process from CLI
 
 `ps aux|grep mongo`  
-The `ps aux` command finds all processes and the pipe to `grep mongo` shows just the mongo processes which might look like the output below.  The first process is the mongod that we want to stop and the seconds is just our command to search for these processes.    
+The `ps aux` command finds all processes and the pipe to `grep mongo` shows just the mongo processes which might look like the output below.  The first process is the mongod that we want to stop and the second is just our command to search for these processes.    
 `becky          14191   1.3  0.1  2570380   4916   ??  S    Sun07PM  12:01.62 mongod`  
 `becky          20343   0.0  0.0  2423376    212 s000  R+    9:58AM   0:00.00 grep mongo`  
 
