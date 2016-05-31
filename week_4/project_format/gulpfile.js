@@ -1,7 +1,6 @@
 const gulp = require('gulp');
 const eslint = require('gulp-eslint');
 const mocha = require('gulp-mocha');
-require('gulp-watch');
 
 gulp.task('default', ['lint', 'test'], () => {
   console.log('started');
