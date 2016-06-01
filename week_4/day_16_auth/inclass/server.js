@@ -7,7 +7,7 @@ mongoose.connect('mongodb://localhost/dev_db');
 
 app.use('/', authRouter);
 
-app.use((err, req, res, next) => {
+app.use((err, req, res, _) => {
   res.status(500).json({message: err.message});
 });
 
