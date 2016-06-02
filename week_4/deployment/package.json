@@ -1,0 +1,38 @@
+{
+  "name": "rest_api",
+  "version": "0.1.0",
+  "description": "##To Submit this Assignment   * fork this repository   * write all of your code in a folder containing your name   * push to your repository   * submit a pull request to this repository   * submit a link to your PR in canvas",
+  "main": "index.js",
+  "scripts": {
+    "test": "./node_modules/mocha/bin/mocha",
+    "start": "node server.js",
+    "lint": "./node_modules/eslint/bin/eslint.js *"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rebeccapeltz/node-project"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rebeccapeltz/node-project/rest_api/issues"
+  },
+  "homepage": "https://github.com/rebeccapeltz/node-project/rest_api#readme",
+  "devDependencies": {
+    "chai": "3.5.0",
+    "chai-http": "2.0.1",
+    "eslint": "2.11.1",
+    "gulp": "3.9.1",
+    "gulp-eslint": "2.0.0",
+    "gulp-mocha": "2.2.0",
+    "gulp-watch": "4.3.6",
+    "mocha": "2.5.3"
+  },
+  "dependencies": {
+    "body-parser": "1.15.1",
+    "express": "4.13.4",
+    "mongoose": "4.4.19",
+    "morgan": "1.7.0"
+  }
+}
