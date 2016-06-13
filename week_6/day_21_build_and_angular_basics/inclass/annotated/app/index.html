@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body ng-app="FirstApp">
+  <main ng-init="twoWay = 'hi'"/>
+    <!-- {{}} indicates that an expression needs to be evaluated. You
+    can put any javascript expression in these brackets and it will
+    evaluate before it ends up in the view. -->
+    {{twoWay}}
+    <input type="text" ng-model="twoWay" placeholder="TWO WAY DAAATTTAAA"/>
+  </main>
+  <!-- script file paths are relative to the layout of your build
+  not of your source. -->
+  <script src="./bundle.js"></script>
+</body>
+</html>
