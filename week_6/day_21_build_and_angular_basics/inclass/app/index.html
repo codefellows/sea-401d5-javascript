@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+<main ng-app="FirstApp">
+  
+  <h1 ng-if="showResult">Result:{{resultOne + resultTwo}}</h1>
+  <input type="number" ng-model="resultOne" placeholder="result one"/>
+  <input type="number" ng-model="resultTwo" placeholder="result two"/>
+  <button ng-click="showResult = !showResult">Show Result</button>
+  <pre>
+                                   ,-----.
+                                   |     |
+                                ,--|     |-.
+                         __,----|  |     | |
+                       ,;::     |  `_____' |
+                       `._______|    i^i   |
+                                `----| |---'| .
+                           ,-------._| |== ||//
+                           |       |_|P`.  /'/
+                           `-------' 'Y Y/'/'
+                                     .==\ /_\
+   ^__^                             /   /'|  `i
+   (oo)\_______                   /'   /  |   |
+   (__)\       )\/\             /'    /   |   `i
+       ||----w |           ___,;`----'.___L_,-'`\__
+       ||     ||          i_____;----\.____i""\____\
+  </pre>
+</main>
+<p>{{resultTwo}}</p>
+  <script src="bundle.js"></script>
+</body>
+</html>
