@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Contact Scope</title>
+
+
+  <script src="bundle.js"></script>
+
+
+
+
+</head>
+<body ng-app="ContactsApp">
+  <div id="ctrl-exmpl" ng-controller="ContactsController">
+  <label>Name: <input type="text" ng-model="name"/></label>
+  <button ng-click="greet()">greet</button><br/>
+  Contact:
+  <ul>
+    <li ng-repeat="contact in contacts">
+      <select ng-model="contact.type" id="select_{{$index}}">
+         <option>phone</option>
+         <option>email</option>
+      </select>
+      <input type="text" ng-model="contact.value" aria-labelledby="select_{{$index}}" />
+      <button ng-click="clearContact(contact)">clear</button>
+      <button ng-click="removeContact(contact)">X</button>
+    </li>
+    <li>[ <button ng-click="addContact()">add</button> ]</li>
+ </ul>
+</div>
+</body>
+</html>
+
+<!--
+Copyright 2016 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+-->
