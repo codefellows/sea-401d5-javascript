@@ -1,0 +1,114 @@
+html {
+  background-color: #FFFFFF;
+}
+
+
+div.game-container .game-title {
+  text-align: center;
+}
+div.game-container {
+  width: 500px;
+  background: #000000;
+  padding: 0 0  25px 5px;
+  font-size: 13px;
+  font-family: Courier, fixed;
+  color: #33d011;
+  text-align: left;
+  border: 1px solid #909090;
+  margin: 20px auto;
+  height: 350px;
+  position: relative;
+  font-weight: bold;
+}
+.game-container .game-console {
+  height: 328px;
+}
+.game-container  .game-console .game-console-textbox {
+  width: 100%;
+  height: 328px;
+  border: none;
+  background-color: rgba(0, 0, 0, 0);
+  resize: none;
+  outline: none;
+  padding: 0 15px 0 0;
+}
+html body .game-container  .game-input-container {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 20px;
+}
+html body .game-container  .game-input-container .game-input-prompt {
+  width: 15px;
+  background-color: rgba(0, 0, 0, 0);
+  padding-left: 5px;
+  display: inline-block;
+  float: left;
+}
+html body .game-container .game-input-container .game-input-text {
+  background-color: rgba(0, 0, 0, 0);
+  display: inline-block;
+  float: left;
+}
+html body .game-container  .game-input-container .game-input-cursor {
+  background-color: rgba(0, 0, 0, 0);
+  color: #33d011;
+  -webkit-animation: 1s blink step-end infinite;
+  animation: 1s blink step-end infinite;
+  float: left;
+  font-weight: bold;
+}
+html body .game-container .game-input-container .game-input {
+  width: 0;
+  height: 0;
+  opacity: 0;
+  border: none;
+  padding: 0;
+}
+/* blinking cursor */
+@-webkit-keyframes blink {
+  from,
+  to {
+    color: #33d011;
+  }
+  50% {
+    color: transparent;
+  }
+}
+@keyframes blink {
+  from,
+  to {
+    color: #33d011;
+  }
+  50% {
+    color: transparent;
+  }
+}
+::-webkit-scrollbar {
+  background-color: #f1f1f1;
+  width: 8px;
+  height: 10px;
+}
+::-webkit-scrollbar-button:start:decrement,
+::-webkit-scrollbar-button:end:increment {
+  background-color: transparent;
+  display: block;
+  height: 0;
+  width: 0;
+}
+::-webkit-scrollbar-track {
+  background-color: #000000;
+  border-left: 1px solid #909090;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #909090;
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: #a9a9a9;
+}
+::-webkit-scrollbar-button {
+  width: 0;
+  height: 0;
+}

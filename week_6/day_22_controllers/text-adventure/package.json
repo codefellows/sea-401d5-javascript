@@ -1,0 +1,19 @@
+{
+  "name": "ng-adventure",
+  "version": "1.0.0",
+  "description": "ng adpatation of Zork like text based game",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "webpack-stream": "^3.2.0"
+  },
+  "dependencies": {
+    "angular": "^1.5.6",
+    "express": "^4.13.4",
+    "express-static": "^1.0.3"
+  }
+}

@@ -1,0 +1,22 @@
+main ul {
+  list-style-type: none;
+  margin: 10px;
+  padding: 0;
+  display: block;
+  height: 300px;
+  width: 600px;
+  overflow-y: scroll;
+  border: 1px solid gray;
+}
+
+
+
+span.game-input {
+  color: #0000FF;
+}
+span.command-input {
+  color: #008000;
+}
+span.user-input {
+  color: #FF0000;
+}

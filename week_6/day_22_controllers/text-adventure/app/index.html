@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>adventure</title>
+    <link rel="stylesheet" href="app.css">
+</head>
+
+<body data-ng-app="adventureApp">
+
+    <main data-ng-controller="GameController" ng-cloak data-ng-init="startGame()">
+        <h1>Adventure App:</h1>
+
+
+
+        <form name="userInputForm" data-ng-submit="processInput()">
+            <label for="command">Command:
+                <input type="text" required data-ng-model="model.command">
+            </label>
+            <button type="submit">Go</button>
+        </form>
+
+        <ul id="inputlog" >
+            <li data-ng-repeat="item in model.gamelog">
+                <span class="{{item.src}}-input">{{item.msg}}
+                </span>
+            </li>
+        </ul>
+
+    </main>
+    <!-- build:js scripts/main.js -->
+    <script src="bundle.js"></script>
+    <!-- endbuild -->
+</body>
+
+</html>
