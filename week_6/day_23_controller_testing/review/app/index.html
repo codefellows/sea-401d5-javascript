@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Notes App</title>
+</head>
+<body ng-app="NotesApp">
+  <main ng-controller="NotesController as notesctrl">
+    <ul>
+      <li ng-repeat="note in notesctrl.notes">Note: {{note}}, Length {{note.length}}
+      </li>
+    </ul>
+    <form ng-submit="notesctrl.addNote(note)">
+      <input ng-model="note" type="text" placeholder="Note Body" />
+      <button type="Submit">New Note</button>
+    </form>
+  </main>
+  <script src="./bundle.js"></script>
+</body>
+</html>
