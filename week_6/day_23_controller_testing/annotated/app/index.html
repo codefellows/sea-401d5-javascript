@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Controller Example</title>
+</head>
+<body ng-app="SecondApp">
+  <!-- ng-controller takes the name of the controller as you
+  passed it into app.controller and the name that you're going
+  to use to reference it in your view. In the form: 
+    "<controller name> as <view controller name>"-->
+  <main ng-controller="FirstController as firstctrl">
+    <!-- Using this syntax effectively sets an object to the name
+     that you passed in. Everything that you set to this in the
+     controller is available here as a property on firstctrl. -->
+    <h1>{{firstctrl.val}}</h1>
+    <ul>
+      <!-- ng-repeat makes a copy of the element it's a property of for
+      each item in a given array and gives you access to each of those
+      items by a name you choose. The syntax is similar to a for in loop,
+      it takes the form:
+      "<reference name of item> in <array property on controller>-->
+      <li ng-repeat="message in firstctrl.messages">
+        {{message}}
+      </li>
+    </ul>
+    <!-- ng-submit takes a function that gets called when the form is submitted -->
+      <form ng-submit="firstctrl.addMessage(message)">
+        <input type="text" placeholder="new message" ng-model="message"/>
+        <button type="submit">New Message</button>
+      </form>
+  </main>
+  <script src="./bundle.js"></script>
+</body>
+</html>

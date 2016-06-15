@@ -17,4 +17,14 @@ gulp.task('bundle', () => {
     .pipe(gulp.dest(__dirname + '/build'));
 });
 
+gulp.task('bundle:test', () => {
+  return gulp.src(__dirname + '/test/*_test.js')
+    .pipe(webpack({
+      output: {
+        filename: 'test_bundle.js'
+      }
+    }))
+    .pipe(gulp.dest(__dirname + '/test'));
+});
+
 gulp.task('default', ['bundle', 'copy']);
