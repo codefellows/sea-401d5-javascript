@@ -52,7 +52,6 @@ app.delete('/:id', (req, res, next) => {
 });
 
 app.use((req, res) => {
-  console.log('hit end');
   res.status(404).json({message: 'route not found'});
 }).use((err, req, res, next) => {
   res.status(500).json({message: err.message});
