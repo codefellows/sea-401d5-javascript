@@ -5,7 +5,8 @@
   <title>Notes App</title>
 </head>
 <body ng-app="NotesApp">
-  <main ng-controller="NotesController as notesctrl">
+  <main ng-controller="NotesController as notesctrl"
+    ng-init="notesctrl.getNotes()">
     <h1>{{notesctrl.smokeTest}}</h1>
     <ul>
       <li ng-repeat="note in notesctrl.notes">
