@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Controller Example</title>
+</head>
+<body ng-app="SecondApp">
+  <main ng-controller="FirstController as firstctrl" ng-init="firstctrl.getNotes()">
+    <h1>{{firstctrl.val}}</h1>
+
+    <ul>
+      <li ng-repeat="note in firstctrl.notes">
+        {{note.body}}
+        <!-- The note we get access to from ng-repeat isn't a property
+          of the controller, so in order to get it to the controller
+          we have to pass it off to a function. -->
+        <form ng-submit="firstctrl.updateNote(note, updatedNote)">
+          <!-- ng-repeat actually creates another scope for each item
+           in the repeat. So here when we set updatedNote it's actually
+           on the scope of each repeated li-->
+          <input type="text" ng-model="updatedNote.body"/>
+          <button type="submit">update</button>
+          <button ng-click="firstctrl.deleteNote(note)">delete</button>
+        </form>
+      </li>
+    </ul>
+
+    <form ng-submit="firstctrl.addNote()">
+      <!-- firstctrl.note.body adds an object to the controller on
+        the property note and sets the body to what's in the input that ng-model is on -->
+      <input type="text" placeholder="new note" ng-model="firstctrl.note.body"/>
+      <button type="submit">New Note</button>
+    </form>
+  </main>
+  <script src="./bundle.js"></script>
+</body>
+</html>
