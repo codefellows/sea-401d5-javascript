@@ -5,5 +5,25 @@
   <title>Notes App</title>
 </head>
 <body ng-app="NotesApp">
+  <main ng-controller="NotesController as notesctrl"
+    ng-init="notesctrl.getNotes()">
+    <h1>{{notesctrl.smokeTest}}</h1>
+    <ul>
+      <li ng-repeat="note in notesctrl.notes">
+      {{note.body}}
+      <button ng-click="note.editing = !note.editing">EDIT</button>
+      <form ng-hide="!note.editing" ng-submit="notesctrl.updateNote(note, updatedNote)">
+        <input type="text" ng-model="updatedNote"/>
+        <button type="submit">Update</button>
+        <button ng-click="notesctrl.deleteNote(note)">Delete</button>
+      </form>
+      </li>
+    </ul>
+    <form ng-submit="notesctrl.addNote()">
+      <input ng-model="notesctrl.newNote.body" type="text"/>
+      <button type="submit">New Note</button>
+    </form>
+  </main>
+  <script src="./bundle.js"></script>
 </body>
 </html>
