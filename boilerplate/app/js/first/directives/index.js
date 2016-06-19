@@ -1,3 +1,3 @@
 module.exports = function(app) {
-  require('./WIDGET')(app);
+  require('./FirstDirective')(app);
 };
