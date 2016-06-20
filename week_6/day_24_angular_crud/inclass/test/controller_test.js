@@ -37,6 +37,29 @@ describe('controller tests', () => {
 
     expect(notesctrl.notes[0].body).toBe('test note');
   });
+
+  it('should create a note', () => {
+    $httpBackend.expectPOST('http://localhost:3000/')
+      .respond(200, {data: {body: 'test note'}});
+
+    notesctrl.newNote = {body: 'test note'};
+    notesctrl.addNote();
+    $httpBackend.flush();
+
+    expect(notesctrl.newNote).toBe(null);
+  });
+
+  it('should delete a note', () => {
+    let testNote = {body: 'test note', _id:1};
+    $httpBackend.expectDELETE('http://localhost:3000/1')
+      .respond(200, {message: 'deleted'});
+
+    notesctrl.notes.push(testNote);
+    notesctrl.deleteNote(testNote);
+    $httpBackend.flush();
+
+    expect(notesctrl.notes.length).toBe(1);
+  });
 });
 
 
