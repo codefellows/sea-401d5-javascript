@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Isolate App</title>
+    <link rel="stylesheet" href="app.css">
+</head>
+<body data-ng-app="FirstApp">
+    <main ng-cloak ng-controller="FirstController as settings">
+      <h3>Address: {{settings.address}}</h3>
+      <h3>First: {{settings.firstname}}</h3>
+
+      <isolate-directive fullname="settings.fullname()" firstname="{{settings.firstname}}"  lastname="settings.lastname" address="settings.address"></isolate-directive>
+
+      <div isolate-directive-second lastname={{settings.lastname}} firstname="settings.firstname"></div>
+
+    </main>
+    <script src="bundle.js"></script>
+</body>
+
+</html>

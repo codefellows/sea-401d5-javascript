@@ -1,0 +1,18 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Image App</title>
+    <link rel="stylesheet" href="app.css">
+</head>
+<body data-ng-app="FirstApp">
+    <main ng-cloak ng-controller="ImageController as settings">
+        <image-display url="{{settings.url}}" width="{{settings.width}}" height="{{settings.height}}" alt="{{settings.title}}"  ></image-display>
+    </main>
+    <script src="bundle.js"></script>
+</body>
+
+</html>

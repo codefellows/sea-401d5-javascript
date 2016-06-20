@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>First App</title>
+    <link rel="stylesheet" href="app.css">
+</head>
+<body data-ng-app="FirstApp">
+    <main ng-cloak ng-controller="FirstController as settings">
+      <h1>Name: {{settings.firstname}}  {{settings.lastname}}</h1>
+      <first-directive>
+        <h3>{{settings.firstname}}</h3>
+
+      </first-directive>
+      <!-- <div class="first-directive"></div>
+      <div first-directive></div> -->
+    </main>
+    <script src="bundle.js"></script>
+</body>
+
+</html>
