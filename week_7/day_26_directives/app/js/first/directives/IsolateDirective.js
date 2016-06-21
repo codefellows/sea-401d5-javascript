@@ -4,8 +4,8 @@ module.exports = function(app) {
       templateUrl: './templates/FirstApp/Isolate.html',
       restrict: 'E', //A attribute E element C class,
       scope:{
-        firstname: '@',  //one way binding
-        lastname:  '=',  //two way binding
+        firstname: '@',  //attribute binding - expects a string - two way binding only within directive
+        lastname:  '=',  //two way binding with controller
         address: '=',  // two way
         fullname: '&'  // behavior function
       }
