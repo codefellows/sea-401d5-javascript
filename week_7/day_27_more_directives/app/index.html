@@ -7,7 +7,7 @@
 <body ng-app="NotesApp">
   <main ng-controller="NotesController as notesctrl">
     {{notesctrl.notes}}
-    <todo-list notes="notesctrl.notes"></todo-list>
+    <todo-list addNote="notesctrl.addNote" notes="notesctrl.notes"></todo-list>
   </main>
   <script src="bundle.js"></script>
 </body>
