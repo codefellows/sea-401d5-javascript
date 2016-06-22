@@ -1,0 +1,19 @@
+{
+  "name": "day_27_more_directives",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.14.0"
+  },
+  "devDependencies": {
+    "angular": "^1.5.7",
+    "gulp": "^3.9.1",
+    "webpack-stream": "^3.2.0"
+  }
+}

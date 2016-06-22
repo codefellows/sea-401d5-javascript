@@ -1,0 +1,17 @@
+<div>
+  <ul ng-hide="mode === 'single'">
+    <note note="note" ng-repeat="note in notes"></note>
+    <h1>{{todoctrl.isOnTheController}}</h1>
+  </ul>
+  <div ng-hide="mode === 'list'" ng-click="todoctrl.showArticle()">
+    {{currentNote.title}}
+    {{currentNote.body}}
+  </div>
+  <form ng-submit="addNote(title, body)">
+    <input type="text" ng-model="title"/>
+    <input type="text" ng-model="body"/>
+    <button type="submit">submit</button>
+  </form>
+  <label>List<input type="radio" name="mode" value="list" ng-model="mode" ng-change="changeView()"/></label>
+  <label>Single<input type="radio" name="mode" value="single" ng-model="mode" ng-change="changeView()"/></label>
+</div>

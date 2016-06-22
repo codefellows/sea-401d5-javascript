@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Notes App</title>
+</head>
+<body ng-app="NotesApp">
+  <main ng-controller="NotesController as notesctrl">
+    {{notesctrl.notes}}
+    <h1>{{scopeThing}}</h1>
+    <todo-list addNote="notesctrl.addNote" notes="notesctrl.notes"></todo-list>
+  </main>
+  <script src="bundle.js"></script>
+</body>
+</html>
