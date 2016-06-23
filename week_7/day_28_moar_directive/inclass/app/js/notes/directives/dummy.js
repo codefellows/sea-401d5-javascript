@@ -3,7 +3,7 @@ module.exports = function(app) {
     return {
       templateUrl: './templates/notes/dummy.html',
       scope: {
-        thing: '='
+        data: '='
       },
       replace: true
     };
