@@ -4,14 +4,7 @@ module.exports = function(app) {
       templateUrl: './templates/notes/todo.html',
       scope: {notes: '='},
       controller: TodoController,
-      controllerAs: 'todoctrl',
-      link: function($scope, elem, attr, controller) {
-        console.log('SCOPE', $scope);
-        console.log('ELEM', elem);
-        console.log('ATTR', attr);
-        console.log('CONTROLLER', controller);
-      },
-      require: '^ngController'
+      controllerAs: 'todoctrl'
     };
   });
 };

@@ -4,6 +4,8 @@ require('angular-mocks');
 require('../app/js/client');
 
 const dummyTemplate = require('../app/templates/notes/dummy.html');
+const todoTemplate = require('../app/templates/notes/todo.html');
+const noteTemplate = require('../app/templates/notes/note_directive.html');
 
 describe('directive tests', () => {
   let $httpBackend;
@@ -36,6 +38,43 @@ describe('directive tests', () => {
     let text = h2.text();
 
     expect(text).toBe('test data');
+  });
+
+  it('should list some notes', () => {
+    $httpBackend.expectGET('./templates/notes/todo.html')
+      .respond(200, todoTemplate);
+    $httpBackend.expectGET('./templates/notes/note_directive.html')
+      .respond(200, noteTemplate);
+
+    $scope.data = [{
+      body: 'test'
+    }, {
+      body: 'test two'
+    }];
+
+    let link = $compile('<todo-list notes="data"></todo-list>');
+    let directive = link($scope);
+    $scope.$digest();
+    $httpBackend.flush();
+
+    console.log(directive);
+  });
+
+  it('should note', () => {
+    $httpBackend.expectGET('./templates/notes/note_directive.html')
+      .respond(200, noteTemplate);
+
+    $scope.note = {
+      body: 'TEST NOTE'
+    };
+    let element = angular.element('<note note="note"></note>');
+    element.data('$todoListController', {});
+    let link = $compile(element);
+    let directive = link($scope);
+    $scope.$digest();
+    $httpBackend.flush();
+
+    console.log(directive);
 
   });
 });
