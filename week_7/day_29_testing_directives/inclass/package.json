@@ -1,0 +1,23 @@
+{
+  "name": "day_27_more_directives",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.14.0"
+  },
+  "devDependencies": {
+    "angular": "^1.5.7",
+    "angular-mocks": "^1.5.7",
+    "gulp": "^3.9.1",
+    "html-loader": "^0.4.3",
+    "jasmine-core": "^2.4.1",
+    "karma-chrome-launcher": "^1.0.1",
+    "webpack-stream": "^3.2.0"
+  }
+}
