@@ -47,9 +47,11 @@ describe('directive tests', () => {
       .respond(200, noteTemplate);
 
     $scope.data = [{
-      body: 'test'
+      body: 'test',
+      title: 'test title'
     }, {
-      body: 'test two'
+      body: 'test two',
+      title: 'test title two'
     }];
 
     let link = $compile('<todo-list notes="data"></todo-list>');
@@ -57,7 +59,19 @@ describe('directive tests', () => {
     $scope.$digest();
     $httpBackend.flush();
 
-    console.log(directive);
+    let notes = directive.find('note');
+
+    let span = directive.find('span')[0];
+    let text = span.innerText;
+    expect(text).toBe('test');
+
+    let div = directive.find('div');
+    div.triggerHandler('click');
+    expect(directive.isolateScope().mode).toBe('list');
+    expect(notes.length).toBe(2);
+
+    //directive.isolateScope().mode = 'single';
+    directive.isolateScope().currentNote = {title: 'TEST TITLE', body: 'TEST BODY'};
   });
 
   it('should note', () => {

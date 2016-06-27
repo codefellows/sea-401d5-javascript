@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Controller Example</title>
+</head>
+<body ng-app="NotesApp">
+  <main ng-controller="NotesController as notes" ng-init="notes.getNotes()">
+    <h1>{{notes.val}}</h1>
+
+    <ul>
+      <li ng-repeat="note in notes.notes">
+        {{note.body}}
+        <form ng-submit="notes.updateNote(note, updatedNote)">
+          <input type="text" ng-model="updatedNote.body"/>
+          <button type="submit">update</button>
+          <button ng-click="notes.deleteNote(note)">delete</button>
+        </form>
+      </li>
+    </ul>
+
+    <form ng-submit="notes.addNote()">
+      <input type="text" placeholder="new note" ng-model="notes.note.body"/>
+      <button type="submit">New Note</button>
+    </form>
+  </main>
+  <script src="./bundle.js"></script>
+</body>
+</html>
