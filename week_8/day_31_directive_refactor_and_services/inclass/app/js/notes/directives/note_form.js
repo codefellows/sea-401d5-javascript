@@ -2,7 +2,8 @@ module.exports = function(app) {
   app.directive('noteForm', function() {
     return {
       scope: {
-        type: '@'
+        type: '@',
+        note: '='
       },
       templateUrl: './templates/notes/note_form.html',
       require: '^^ngController',
@@ -11,7 +12,7 @@ module.exports = function(app) {
         $scope.submit = $scope.type === 'new' ? controller.addNote
           : controller.updateNote;
 
-        console.log(controller.notes, $scope.submit);
+        console.log($scope.note);
       }
     };
   });

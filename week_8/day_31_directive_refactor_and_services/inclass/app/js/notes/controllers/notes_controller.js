@@ -1,8 +1,14 @@
+const cowsay = require('cowsay-browser');
+
 module.exports = function(app) {
-  app.controller('NotesController', function($http) {
-    console.log('hi')
+  app.controller('NotesController', function($http, FirstService) {
     const url = 'http://localhost:3000/';
+    this.cow = cowsay.say({
+      text: 'mooooooooooooooooooooooooooooooooo',
+      f: 'koala'
+    });
     this.notes = [];
+    this.message = FirstService.message;
 
     this.getNotes = function() {
       $http.get(url)
@@ -13,17 +19,16 @@ module.exports = function(app) {
         });
     };
 
-    this.addNote = function() {
-      $http.post(url, this.note)
+    this.addNote = function(note) {
+      $http.post(url, note)
         .then((res) => {
           this.notes.push(res.data);
         }, (err) => {
           console.log(err);
         });
-    };
+    }.bind(this);
 
-    this.updateNote = function(note, updateNote) {
-      note.body = updateNote.body;
+    this.updateNote = function(note) {
       $http.put(url, note)
         .then(() => {
           this.notes = this.notes.map(n => {
@@ -32,7 +37,7 @@ module.exports = function(app) {
         }, (err) => {
           console.log(err);
         });
-    };
+    }.bind(this);
 
     this.deleteNote = function(note) {
       $http.delete(url + note._id)
