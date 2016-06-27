@@ -3,7 +3,7 @@ const del = require('del');
 const webpack = require('webpack-stream');
 
 const paths = {
-  html: './app/index.html',
+  html: './app/**/*.html',
   js: './app/js/client.js',
   tests: './test/controller_test.js'
 };
