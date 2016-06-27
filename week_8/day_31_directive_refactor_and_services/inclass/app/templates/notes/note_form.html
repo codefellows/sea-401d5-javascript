@@ -1,4 +1,5 @@
-<form>
+<form ng-submit="submit()">
   <input type="text"/>
-  <button>SUBMIT</button>
+  <button type="submit">{{type}} note</button>
+  <button ng-show="type === 'edit'" ng-click="deleteNote()">Delete</button>
 </form>

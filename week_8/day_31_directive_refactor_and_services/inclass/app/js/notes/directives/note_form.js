@@ -4,7 +4,15 @@ module.exports = function(app) {
       scope: {
         type: '@'
       },
-      templateUrl: './templates/notes/note_form.html'
+      templateUrl: './templates/notes/note_form.html',
+      require: '^^ngController',
+      link: function($scope, elem, attr, controller) {
+        $scope.deleteNote = controller.deleteNote;
+        $scope.submit = $scope.type === 'new' ? controller.addNote
+          : controller.updateNote;
+
+        console.log(controller.notes, $scope.submit);
+      }
     };
   });
 };

@@ -16,6 +16,7 @@
           <button type="submit">update</button>
           <button ng-click="notes.deleteNote(note)">delete</button>
         </form>
+        <note-form type="edit"></note-form>
       </li>
     </ul>
 
@@ -23,7 +24,7 @@
       <input type="text" placeholder="new note" ng-model="notes.note.body"/>
       <button type="submit">New Note</button>
     </form>
-    <note-form></note-form>
+    <note-form type="new"></note-form>
   </main>
   <script src="./bundle.js"></script>
 </body>
