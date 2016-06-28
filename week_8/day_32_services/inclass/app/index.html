@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Controller Example</title>
+</head>
+<body ng-app="NotesApp">
+  <main ng-controller="NotesController as notes" ng-init="notes.getNotes()">
+    <h1>{{notes.message}}</h1>
+    <pre>{{notes.cow}}</pre>
+    <ul>
+      <li ng-repeat="note in notes.notes">
+        {{note.body}}
+        <note-form note="note" type="edit"></note-form>
+      </li>
+    </ul>
+
+    <note-form note="{}" type="new"></note-form>
+  </main>
+  <script src="./bundle.js"></script>
+</body>
+</html>
