@@ -5,11 +5,11 @@
   <title>Controller Example</title>
 </head>
 <body ng-app="NotesApp">
-  <main ng-controller="NotesController as notes" ng-init="notes.getNotes()">
-    <h1>{{notes.message}}</h1>
-    <pre>{{notes.cow}}</pre>
+  <main ng-controller="NotesController as notesctrl" ng-init="notesctrl.getNotes()">
+    <h1>{{notesctrl.message}}</h1>
+    <pre>{{notesctrl.testCow}}</pre>
     <ul>
-      <li ng-repeat="note in notes.notes">
+      <li ng-repeat="note in notesctrl.notes">
         {{note.body}}
         <note-form note="note" type="edit"></note-form>
       </li>

@@ -1,14 +1,12 @@
 const cowsay = require('cowsay-browser');
 
 module.exports = function(app) {
-  app.controller('NotesController', function($http, FirstService) {
+  app.controller('NotesController', function($http, FirstService, CowsayService) {
     const url = 'http://localhost:3000/';
-    this.cow = cowsay.say({
-      text: 'mooooooooooooooooooooooooooooooooo',
-      f: 'koala'
-    });
+
     this.notes = [];
     this.message = FirstService.message;
+    this.testCow = CowsayService.makeCow();
 
     this.getNotes = function() {
       $http.get(url)
