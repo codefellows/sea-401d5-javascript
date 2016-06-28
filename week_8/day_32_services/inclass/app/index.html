@@ -8,6 +8,7 @@
   <main ng-controller="NotesController as notesctrl" ng-init="notesctrl.getNotes()">
     <h1>{{notesctrl.message}}</h1>
     <pre>{{notesctrl.testCow}}</pre>
+    <cow-note text="'text'" file="surgery"></cow-note>
     <ul>
       <li ng-repeat="note in notesctrl.notes">
         {{note.body}}
