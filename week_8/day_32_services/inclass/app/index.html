@@ -18,6 +18,11 @@
 
     <note-form note="{}" type="new"></note-form>
   </main>
+  <div ng-controller="ErrorController as errorctrl">
+    <ul>
+      <li ng-repeat="error in errorctrl.errors">{{error}}</li>
+    </ul>
+  </div>
   <script src="./bundle.js"></script>
 </body>
 </html>
