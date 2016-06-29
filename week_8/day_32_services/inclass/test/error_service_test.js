@@ -13,6 +13,16 @@ describe('error service tests', function() {
   });
   it('should have a getter', () => {
     console.log(errorService);
-    expect(typeof errorService.getErrors).toBe('string');
+    expect(typeof errorService.getErrors).toBe('function');
+  });
+
+  it('should get an array', () => {
+    expect(Array.isArray(errorService.getErrors())).toBe(true);
+  });
+
+  it('should add an error to the log', () => {
+    errorService.logError('test error')({});
+    let errorArray = errorService.getErrors();
+    expect(errorArray[0]).toBe('test error');
   });
 });

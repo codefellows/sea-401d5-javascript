@@ -1,0 +1,8 @@
+<h1>Barcalona</h1>
+<li ng-repeat="barca in barcas">
+  Player Name: {{barca.name}}<br>
+  Position: {{barca.position}}<br>
+  Number:{{barca.number}}<br>
+  Goals: {{barca.goals}}
+  <barca-new-player-form player="barca" type="edit" team="barca"></barca-new-player-form>
+</li>

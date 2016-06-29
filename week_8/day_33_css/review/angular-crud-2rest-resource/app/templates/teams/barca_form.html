@@ -1,0 +1,8 @@
+<form ng-submit="submit(player)">
+  <button type="submit" >{{type}} player</button>
+  <input placeholder="name" type="text" ng-model="player.name">
+  <input placeholder="position" type="text" ng-model="player.position">
+  <input placeholder="number" type="text" ng-model="player.number">
+  <input placeholder="goals" type="text" ng-model="player.goals"><br>
+  <button ng-show="type === 'edit'" ng-click="delete(player)">Delete Player</button>
+</form>

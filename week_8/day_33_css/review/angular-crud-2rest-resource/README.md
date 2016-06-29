@@ -1,0 +1,1 @@
+# angular-crud-2rest-resource
