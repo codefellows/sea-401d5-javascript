@@ -1,0 +1,25 @@
+{
+  "name": "flexbox-problem-solving",
+  "authors": [
+    "Rebecca Peltz <rebeccapeltz@gmail.com>"
+  ],
+  "description": "solving layout problems with flexbox",
+  "main": "index.html",
+  "keywords": [
+    "flex"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.5.7",
+    "angular-nvd3": "^1.0.7",
+    "nvd3": "^1.8.3"
+  }
+}

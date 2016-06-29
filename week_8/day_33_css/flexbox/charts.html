@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Flexbox Picture Dashboard</title>
+
+  <meta charset="utf-8">
+  <!-- it's important for d3.js -->
+  <script src="bower_components/angular/angular.js"></script>
+  <script src="bower_components/d3/d3.js"></script>
+  <script src="bower_components/nvd3/build/nv.d3.js"></script>
+  <!-- or use another assembly -->
+  <script src="bower_components/angular-nvd3/dist/angular-nvd3.js"></script>
+  <link rel="stylesheet" href="bower_components/nvd3/build/nv.d3.css">
+
+  <link rel="stylesheet" href="css/style.css">
+
+
+
+
+</head>
+
+<body>
+
+  <header class="header">
+    <h1 class="logo"><a href="#">Flexbox</a></h1>
+    <ul class="main-nav">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Portfolio</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </header>
+  <div ng-app="myApp">
+    <div ng-controller="myCtrl">
+      <div class="dash">
+        <div>
+          <nvd3 options="options" data="data"></nvd3>
+        </div>
+
+        <div>
+          <nvd3 options="options" data="data"></nvd3>
+        </div>
+
+        <div>
+          <nvd3 options="options" data="data"></nvd3>
+        </div>
+
+        <div>
+          <nvd3 options="options" data="data"></nvd3>
+        </div>
+
+        <div>
+          <nvd3 options="options" data="data"></nvd3>
+        </div>
+
+        <div>
+          <nvd3 options="options" data="data"></nvd3>
+        </div>
+
+        <div>
+          <nvd3 options="options" data="data"></nvd3>
+        </div>
+
+        <div>
+          <nvd3 options="options" data="data"></nvd3>
+        </div>
+
+        <div>
+          <nvd3 options="options" data="data"></nvd3>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <footer>
+    <p>© 2016 Flexbox Sticky Footer</p>
+  </footer>
+
+
+
+  <script type="text/javascript">
+    angular.module('myApp', ['nvd3'])
+      .controller('myCtrl', function($scope) {
+
+        /* Chart options */
+        $scope.options = {
+          chart: {
+            type: 'lineChart',
+            height: 300,
+            margin: {
+              top: 20,
+              right: 20,
+              bottom: 40,
+              left: 55
+            },
+            x: function(d) {
+              return d.x;
+            },
+            y: function(d) {
+              return d.y;
+            },
+            useInteractiveGuideline: true,
+            dispatch: {
+              stateChange: function(e) {
+                console.log("stateChange");
+              },
+              changeState: function(e) {
+                console.log("changeState");
+              },
+              tooltipShow: function(e) {
+                console.log("tooltipShow");
+              },
+              tooltipHide: function(e) {
+                console.log("tooltipHide");
+              }
+            },
+            xAxis: {
+              axisLabel: 'Time (ms)'
+            },
+            yAxis: {
+              axisLabel: 'Voltage (v)',
+              tickFormat: function(d) {
+                return d3.format('.02f')(d);
+              },
+              axisLabelDistance: -10
+            },
+            callback: function(chart) {
+              console.log("!!! lineChart callback !!!");
+            }
+          },
+          title: {
+            enable: true,
+            text: 'Line Chart'
+          },
+          subtitle: {
+            enable: true,
+            text: 'For demonstration',
+            css: {
+              'text-align': 'center',
+              'margin': '10px 13px 0px 7px'
+            }
+          }
+          // ,
+          // caption: {
+          //   enable: true,
+          //   html: '<b>Figure 1.</b> ',
+          //   css: {
+          //     'text-align': 'justify',
+          //     'margin': '10px 13px 0px 7px'
+          //   }
+          // }
+        };
+
+        /* Chart data */
+        $scope.data = sinAndCos();
+
+        /*Random Data Generator */
+        function sinAndCos() {
+          var sin = [],
+            sin2 = [],
+            cos = [];
+
+          //Data is represented as an array of {x,y} pairs.
+          for (var i = 0; i < 100; i++) {
+            sin.push({
+              x: i,
+              y: Math.sin(i / 10)
+            });
+            sin2.push({
+              x: i,
+              y: i % 10 == 5 ? null : Math.sin(i / 10) * 0.25 + 0.5
+            });
+            cos.push({
+              x: i,
+              y: .5 * Math.cos(i / 10 + 2) + Math.random() / 10
+            });
+          }
+
+          //Line chart data should be sent as an array of series objects.
+          return [{
+            values: sin, //values - represents the array of {x,y} data points
+            key: 'Sine Wave', //key  - the name of the series.
+            color: '#ff7f0e' //color - optional: choose your own line color.
+          }, {
+            values: cos,
+            key: 'Cosine Wave',
+            color: '#2ca02c'
+          }, {
+            values: sin2,
+            key: 'Another sine wave',
+            color: '#7777ff',
+            area: true //area - set to true if you want this line to turn into a filled area chart.
+          }];
+        };
+      });
+  </script>
+</body>
+
+</html>

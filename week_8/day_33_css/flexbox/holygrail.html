@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Flexbox Sticky Footer</title>
+  <!-- adpated from http://codepen.io/ryanseddon/pen/vnHJr/ -->
+  <style>
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+.layout__body {
+  display: flex;
+  flex: 1;
+}
+
+.layout__content {
+  flex: 1;
+}
+.layout__columns {
+  flex: 0 0 12em;
+}
+.layout__nav {
+  order: -1;
+}
+
+.layout__content {
+  background: #eee;
+}
+.layout__columns {
+  background: #ddd;
+}
+header, footer {
+  background: #000;
+  color: #fff;
+  padding: 10px;
+}
+footer a {
+  flex: 1;
+  color: white;
+  text-decoration: none;
+}
+h1 {
+  margin: 0;
+  font-size: 15px;
+}
+html,body {
+  height: 100%;
+  margin: 0;
+  font-family: Helvetica;
+}
+</style>
+</head>
+<body>
+
+  <header>
+    <h1>Holy Grail layout made easy with flexbox</h1>
+  </header>
+  <div class="layout__body">
+    <main class="layout__content">main...</main>
+    <nav class="layout__nav layout__columns">nav...</nav>
+    <aside class="layout__aside layout__columns">aside...</aside>
+  </div>
+  <footer>
+
+    <a href="http://philipwalton.github.io/solved-by-flexbox/demos/holy-grail/">Adapted from this awesome site</a>
+    <br><a href="http://alistapart.com/article/holygrail">Origin of CSS Holy Grail</a>
+ </footer>
+ </body>
+ </html>

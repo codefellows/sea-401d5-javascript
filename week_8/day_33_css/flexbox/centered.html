@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Centered Element</title>
+
+  <style>
+    html {
+      height: 100%;
+    }
+
+    body {
+      background-color: #000000;
+      height: 100%;
+    }
+
+    .flex-container {
+      height: 100%;
+      display: -webkit-box;
+      display: -moz-box;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;  /* main axis row direction by default */
+      align-items: center; /* layout on cross axis */
+      justify-content: center; /* layout on main axis row centered */
+    }
+
+    .flex-item {
+      color: #FFFFFF;
+    }
+  </style>
+
+
+</head>
+
+<body>
+  <div class="flex-container">
+    <div class="flex-item">Centered</div>
+  </div>
+</body>
+
+</html>
+<!-- http://jsfiddle.net/rebeccapeltz/k8bqu04f/1/ -->

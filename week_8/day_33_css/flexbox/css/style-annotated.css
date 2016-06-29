@@ -1,0 +1,142 @@
+/* Dashboard */
+html {
+  min-height: 100%;
+  /* with min-height, max-height, and height => min-height and max-height win
+  but max-height loses to min-height */
+}
+body {
+  background: #fff;
+  min-height: 100%;
+  display: flex;  /* indicates that the whole body flexed */
+  flex-direction: column; /* look for top to bottom outer layout */
+}
+.dash {
+  width: 100%;
+  margin: 0 auto;  /* left and right centering */
+  border: 1px solid #898989;
+  padding: .6vw; /* relative to view port 1vw = 1% * viewport width */
+  -ms-flex-wrap: wrap;
+  -ms-flex-direction: column;
+  -webkit-flex-flow: row wrap;
+  flex-flow: row wrap; /* shorthand for direction and wrap => multiline */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex; /* set up a flex on items within row */
+}
+.dash div {
+  width: 300px;  /* fix image size to 300 - match or keep proportional to actual image
+   or size that svg can grow to */
+  margin: .6vw; /* margin is .6 % of view ports - giving horizontal space  */
+  -webkit-box-flex: auto;
+  -ms-flex: auto;
+  flex: auto; /* apply instructions to item:
+  alter dimensions to fill available space
+  stretch to fill space, shrink to avoid overflow
+   equivalent to flex: 1 1 auto  <grow> <shrink> <basis>
+   */
+}
+.dash div svg {
+    border: 1px solid #eee;
+}
+.dash div img {
+  height: auto; /* default browser calculates height */
+  width: 100%; /* image will fill containing block */
+}
+@media screen and (max-width: 480px) {
+  .dash div {
+    margin: 0; /* don't need this when on smaller device */
+  }
+  .dash {
+    padding: 0;
+  }
+}
+/* Navigation */
+* {
+  box-sizing: border-box; /* see this http://www.w3schools.com/cssref/tryit.asp?filename=trycss3_box-sizing
+  removes space taken up by borders, padding, margins because height and width calc don't include*/
+}
+body {
+  font-family: 'Montserrat', sans-serif;
+  line-height: 1.6; /* multiple by default font size which is 16px */
+  margin: 0;
+  min-height: 100vh; /* 100% of window */
+}
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none; /* remove list markers */
+}
+h2, h3, a {
+  color: #34495e;
+}
+a {
+  text-decoration: none; /* remove the underline from link */
+}
+.logo {
+  margin: 0;
+  font-size: 1.45em; /* turn a word into a logo*/
+}
+.main-nav {
+  margin-top: 5px;
+}
+.logo a, .main-nav a {
+  padding: 10px 15px;
+  text-transform: uppercase;
+  text-align: center; /* inline content justify */
+  display: block; /* click anywhere within padding area or anchor, not just text */
+}
+.main-nav a {
+  color: #34495e;
+  font-size: .99em; /* .99 * 16px */
+}
+.main-nav a:hover {
+  color: #718daa;  /* ux to indicated actionable */
+}
+.header {
+  padding-top: .5em;
+  padding-bottom: .5em;
+  border: 1px solid #a2a2a2;
+  background-color: #f4f4f4;
+  -webkit-box-shadow: 0px 0px 14px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 0px 14px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 0px 14px 0px rgba(0, 0, 0, 0.75); /* blur the edges of the header */
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;  /* round the borders */
+}
+
+/* =================================
+  Media Queries
+==================================== */
+
+@media (min-width: 769px) {  /* switch to column layout when */
+  .header, .main-nav {
+    display: flex;
+  }
+  .header {
+    flex-direction: column;
+    align-items: center;
+    .header {
+      width: 80%;
+      margin: 0 auto;
+      max-width: 1150px;
+    }
+  }
+}
+@media (min-width: 1025px) {
+  .header {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+/* footer */
+
+footer {
+  background-color: #bdc3c7;
+  padding: 15px;
+}
+footer p {
+  text-align: center;
+  font-size: 1em;
+}
