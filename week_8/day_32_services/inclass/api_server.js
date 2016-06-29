@@ -14,6 +14,7 @@ mongoose.connect('mongodb://localhost/dev_db');
 app.use(cors());
 
 app.get('/', (req, res, next) => {
+  return next(new Error('test server error'));
   Note.find((err, data) => {
     if (err) return next(err);
 

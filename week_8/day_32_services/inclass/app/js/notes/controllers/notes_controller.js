@@ -1,7 +1,7 @@
 const cowsay = require('cowsay-browser');
 
 module.exports = function(app) {
-  app.controller('NotesController', function($http, FirstService, CowsayService) {
+  app.controller('NotesController', function($http, FirstService, CowsayService, ErrorService) {
     const url = 'http://localhost:3000/';
 
     this.notes = [];
@@ -12,9 +12,7 @@ module.exports = function(app) {
       $http.get(url)
         .then((res) => {
           this.notes = res.data.data;
-        }, (err) => {
-          console.log(err);
-        });
+        }, ErrorService.logError('HERES A MESSAGE'));
     };
 
     this.addNote = function(note) {
