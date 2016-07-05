@@ -1,0 +1,20 @@
+<h2>Customer</h2>
+<div class="container">
+  <div class="row">
+    <form>
+      <label for="firstname">First Name</label>
+      <input class="u-full-width" ng-model="customer.firstname" type="text" placeholder="enter first name" id="firstname">
+
+      <label for="lastname">Last Name</label>
+      <input type="text" class="u-full-width" ng-model="customer.lastname" id="lastname">
+
+      <label for="zipcode">Zipcode</label>
+      <input type="text" class="u-full-width" ng-model="customer.zipcode" id="zipcode">
+
+      <input type="button" class="button-primary" ng-click="go('/list')" value="Cancel">
+      <input type="button" class="button-primary" ng-click="deleteCustomer(customer)" value="Delete">
+      <input type="button" class="button-primary" ng-click="saveCustomer(customer);" value="Save">
+
+    </form>
+  </div>
+</div>

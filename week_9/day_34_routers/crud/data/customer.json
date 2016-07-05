@@ -1,0 +1,55 @@
+[{
+  "customerNumber": "7210",
+  "customerName": "Hotch",
+  "email": "hotch@hotch.com",
+  "address": "33 Here Street",
+  "city": "Rochester",
+  "state": null,
+  "postalCode": null,
+  "country": "USA"
+},{
+  "customerNumber": "7211",
+  "customerName": "Scotch",
+  "email": "hotch@hotch.com",
+  "address": "33 Here Street",
+  "city": "Rochester",
+  "state": null,
+  "postalCode": null,
+  "country": "USA"
+},{
+  "customerNumber": "7212",
+  "customerName": "Botch",
+  "email": "hotch@hotch.com",
+  "address": "33 Here Street",
+  "city": "Rochester",
+  "state": null,
+  "postalCode": null,
+  "country": "USA"
+},{
+  "customerNumber": "7213",
+  "customerName": "Lotch",
+  "email": "hotch@hotch.com",
+  "address": "33 Here Street",
+  "city": "Rochester",
+  "state": null,
+  "postalCode": null,
+  "country": "USA"
+},{
+  "customerNumber": "7214",
+  "customerName": "Motch",
+  "email": "hotch@hotch.com",
+  "address": "33 Here Street",
+  "city": "Rochester",
+  "state": null,
+  "postalCode": null,
+  "country": "USA"
+},{
+  "customerNumber": "7215",
+  "customerName": "Notch",
+  "email": "hotch@hotch.com",
+  "address": "33 Here Street",
+  "city": "Rochester",
+  "state": null,
+  "postalCode": null,
+  "country": "USA"
+}]

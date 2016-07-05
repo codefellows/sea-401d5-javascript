@@ -1,0 +1,56 @@
+<div class="row">
+  <div class="col-md-12" ng-show="customers.length > 0">
+
+    <!-- <nav class= "navbar navbar-default" role= "navigation" > -->
+    <!-- <div class= "navbar-header" > -->
+    <a class="btn btn-primary" href="#/edit-customer/0"><i class="glyphicon glyphicon-plus"></i>&nbsp;Add new Customer</a>
+    <!-- </div> -->
+    <!-- </nav> -->
+    <table class="table table-striped table-bordered">
+      <thead>
+        <th>Customer Name&nbsp;</th>
+        <th>Email&nbsp;</th>
+        <th>Address&nbsp;</th>
+        <th>City&nbsp;</th>
+        <th>Country&nbsp;</th>
+        <th>Action&nbsp;</th>
+      </thead>
+      <tfoot>
+        <td colspan="6">
+          <div class="pagination pull-right">
+            <ul>
+              <li ng-class="{disabled: currentPage == 0}">
+                <a href ng-click="prevPage()">« Prev</a>
+              </li>
+
+              <li ng-repeat="n in range(pagedItems.length, currentPage, currentPage + gap) " ng-class="{active: n == currentPage}" ng-click="setPage()">
+                <a href ng-bind="n + 1">1</a>
+              </li>
+
+              <li ng-class="{disabled: (currentPage) == pagedItems.length - 1}">
+                <a href ng-click="nextPage()">Next »</a>
+              </li>
+            </ul>
+          </div>
+        </td>
+      </tfoot>
+      <tbody>
+        <tr ng-repeat="data in pagedItems[currentPage]">
+          <td>{{data.customerName}}</td>
+          <td>{{data.email}}</td>
+          <td>{{data.address}}</td>
+          <td>{{data.city}}</td>
+          <td>{{data.country}}</td>
+          <td><a href="#/edit-customer/{{data.customerNumber}}" class="btn">&nbsp;<i class="glyphicon glyphicon-edit"></i>&nbsp; Edit Customer</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="col-md-12" ng-show="customers.length == 0">
+    <div class="col-md-12">
+      <h4>No customers found</h4>
+    </div>
+  </div>
+</div>
+
+<!-- <dtable options="options" rows="data" class="material" on-page="paging(offset, size)"> -->
