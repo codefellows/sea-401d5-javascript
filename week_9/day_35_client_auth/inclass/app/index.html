@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Controller Example</title>
+</head>
+<body ng-app="PenguinApp">
+  <main ng-controller="PenguinController as penguinctrl" ng-init="penguinctrl.getPenguins()">
+    <h1>{{penguinctrl.val}}</h1>
+
+    <ul>
+      <li ng-repeat="penguin in penguinctrl.penguins">
+        {{penguin.name}}
+      </li>
+    </ul>
+
+    <form ng-submit="penguinctrl.addPenguin(penguinctrl.penguin)">
+      <input type="text" placeholder="new penguin" ng-model="penguinctrl.penguin.name"/>
+      <button type="submit">New Note</button>
+    </form>
+  </main>
+  <script src="./bundle.js"></script>
+</body>
+</html>
