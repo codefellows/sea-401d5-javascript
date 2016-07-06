@@ -12,7 +12,7 @@ penguinRouter.get('/', (req, res) => {
   });
 });
 
-penguinRouter.post('/', bodyParser, (req, res) => {
+penguinRouter.post('/', bodyParser, jwtAuth, (req, res) => {
   let newPenguin = new Penguin(req.body);
 
   newPenguin.save((err, penguin) => {
