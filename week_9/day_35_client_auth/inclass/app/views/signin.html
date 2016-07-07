@@ -1,9 +1,9 @@
 <main>
   <h1>SIGNIN VIEW</h1>
   <button ng-click="signinctrl.goHome()">home</button>
-  <form ng-submit="signinctrl.signUp(signinctrl.newUser)">
+  <form ng-submit="signinctrl.signIn(signinctrl.newUser)">
     <input type="text" ng-model="signinctrl.newUser.username"></input>
-    <input type="text" ng-model="signinctrl.newUser.password"></input>
+    <input type="password" ng-model="signinctrl.newUser.password"></input>
     <button type="submit">submit</button>
   </form>
 </main>

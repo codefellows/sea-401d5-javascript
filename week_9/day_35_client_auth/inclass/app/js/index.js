@@ -15,6 +15,22 @@ app.factory('AuthService', function($http) {
       });
   };
 
+  service.signIn = function(user) {
+    let base64Auth = btoa(user.username + ':' + user.password);
+    let authString = 'Basic ' + base64Auth;
+
+    return $http({
+      url: 'http://localhost:3000/signin',
+      method: 'POST',
+      headers: {
+        authorization: authString
+      }
+    }).then((res) => {
+      token = res.data.token;
+      return res;
+    });
+  };
+
   service.getToken = function() {
     return token;
   };
@@ -58,12 +74,23 @@ app.controller('SigninController', function($location, AuthService) {
   this.goHome = function() {
     $location.url('/');
   };
+
   this.signUp = function(user) {
     AuthService.signUp(user)
       .then((res) => {
         console.log(res, 'back in controller');
+      })
+      .then((err) => {
+        console.log(err);
       });
   };
+
+  this.signIn = function(user) {
+    AuthService.signIn(user)
+      .then((res) => {
+        console.log(res, 'sign in res');
+      });
+  }
 });
 
 app.config(function($routeProvider) {
